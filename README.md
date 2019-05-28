@@ -8,7 +8,7 @@
 
 ## What is RSMisc?
 
-Miscellaneous helper functions in R that I've found useful and use repeatedly
+Miscellaneous helper functions in R that I've found useful and use repeatedly.
 
 ## Installation
 
