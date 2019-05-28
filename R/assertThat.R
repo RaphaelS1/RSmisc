@@ -1,4 +1,4 @@
-#' @title Generalised Validaton Functions
+#' @title Generalised Validation Functions
 #'
 #' @description These functions are generalised and simplified based on the package \code{checkmate}.
 #'   They are used primarily for the function \code{\link{makeChecks}} that automatically generates

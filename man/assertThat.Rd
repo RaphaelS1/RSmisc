@@ -5,7 +5,7 @@
 \alias{checkThat}
 \alias{testThat}
 \alias{isThat}
-\title{Generalised Validaton Functions}
+\title{Generalised Validation Functions}
 \usage{
 assertThat(x, cond, errormsg)
 

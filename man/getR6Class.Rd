@@ -4,14 +4,14 @@
 \alias{getR6Class}
 \title{Get R6 Class Name}
 \usage{
-getR6Class(object, classname = TRUE, parent = 0)
+getR6Class(object, classname = TRUE, n.par = 0)
 }
 \arguments{
 \item{object}{R6 object.}
 
 \item{classname}{logical, if TRUE (default), returns the name of the class otherwise returns the class.}
 
-\item{parent}{numeric, which class should be returned? By default returns the class of the object, increasing
+\item{n.par}{numeric, which class should be returned? By default returns the class of the object, increasing
 the number returns parents of the class (if applicable).}
 }
 \value{
@@ -29,9 +29,9 @@ naming scheme.
 \examples{
 parent <- R6::R6Class("parent")
 child <- R6::R6Class("child",inherit = parent)
-getR6Class(child$new(), parent = 0)
-getR6Class(child$new(), parent = 1)
-getR6Class(parent$new(), FALSE, parent = 0)
+getR6Class(child$new(), n.par = 0)
+getR6Class(child$new(), n.par = 1)
+getR6Class(parent$new(), FALSE, n.par = 0)
 
 \dontrun{
 getR6Class(parent$new(), parent = 1)
