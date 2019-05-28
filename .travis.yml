@@ -27,3 +27,8 @@ deploy:
   local-dir: docs
   on:
     branch: master
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
