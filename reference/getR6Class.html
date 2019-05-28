@@ -113,7 +113,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>getR6Class</span>(<span class='no'>object</span>, <span class='kw'>classname</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>parent</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
+    <pre class="usage"><span class='fu'>getR6Class</span>(<span class='no'>object</span>, <span class='kw'>classname</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>n.par</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -127,7 +127,7 @@
       <td><p>logical, if TRUE (default), returns the name of the class otherwise returns the class.</p></td>
     </tr>
     <tr>
-      <th>parent</th>
+      <th>n.par</th>
       <td><p>numeric, which class should be returned? By default returns the class of the object, increasing
 the number returns parents of the class (if applicable).</p></td>
     </tr>
@@ -148,7 +148,7 @@ naming scheme.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>parent</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>R6</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/R6/topics/R6Class'>R6Class</a></span>(<span class='st'>"parent"</span>)
 <span class='no'>child</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>R6</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/R6/topics/R6Class'>R6Class</a></span>(<span class='st'>"child"</span>,<span class='kw'>inherit</span> <span class='kw'>=</span> <span class='no'>parent</span>)
-<span class='fu'>getR6Class</span>(<span class='no'>child</span>$<span class='fu'>new</span>(), <span class='kw'>parent</span> <span class='kw'>=</span> <span class='fl'>0</span>)</div><div class='output co'>#&gt; <span class='error'>Error in get(class(object)[[parent + 1]], envir = parent.env(environment())): object 'child' not found</span></div><div class='input'><span class='fu'>getR6Class</span>(<span class='no'>child</span>$<span class='fu'>new</span>(), <span class='kw'>parent</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='error'>Error in get(class(object)[[parent + 1]], envir = parent.env(environment())): object 'parent' not found</span></div><div class='input'><span class='fu'>getR6Class</span>(<span class='no'>parent</span>$<span class='fu'>new</span>(), <span class='fl'>FALSE</span>, <span class='kw'>parent</span> <span class='kw'>=</span> <span class='fl'>0</span>)</div><div class='output co'>#&gt; <span class='error'>Error in get(class(object)[[parent + 1]], envir = parent.env(environment())): object 'parent' not found</span></div><div class='input'>
+<span class='fu'>getR6Class</span>(<span class='no'>child</span>$<span class='fu'>new</span>(), <span class='kw'>n.par</span> <span class='kw'>=</span> <span class='fl'>0</span>)</div><div class='output co'>#&gt; <span class='error'>Error in get(class(object)[[n.par + 1]]): object 'child' not found</span></div><div class='input'><span class='fu'>getR6Class</span>(<span class='no'>child</span>$<span class='fu'>new</span>(), <span class='kw'>n.par</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='error'>Error in get(class(object)[[n.par + 1]]): object 'parent' not found</span></div><div class='input'><span class='fu'>getR6Class</span>(<span class='no'>parent</span>$<span class='fu'>new</span>(), <span class='fl'>FALSE</span>, <span class='kw'>n.par</span> <span class='kw'>=</span> <span class='fl'>0</span>)</div><div class='output co'>#&gt; <span class='error'>Error in get(class(object)[[n.par + 1]]): object 'parent' not found</span></div><div class='input'>
 </div><span class='co'># NOT RUN {</span>
 <span class='fu'>getR6Class</span>(<span class='no'>parent</span>$<span class='fu'>new</span>(), <span class='kw'>parent</span> <span class='kw'>=</span> <span class='fl'>1</span>)
 <span class='co'># }</span><div class='input'>
