@@ -1,6 +1,6 @@
 Package: RSmisc
-Title: Helper functions for R
-Version: 0.0.0.9000
+Title: Miscellaneous Helper Functions for R
+Version: 1.0.0
 Authors@R: person("Raphael", "Sonabend", email = "raphael.sonabend.15@ucl.ac.uk", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-9225-4654"))
 Description: Helper functions in R that I regularly use and have found very useful.
 Depends: R (>= 3.4.0)
