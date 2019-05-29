@@ -5,7 +5,7 @@
 #' for how it is used in distr6.
 #'
 #' @usage makeChecks(assertionName, cond, errormsg, args = alist(x=),
-#'   pos = parent.env(environment()))
+#'   pos = -1)
 #'
 #' @param assertionName name that follows assert/check/test/is
 #' @param cond Boolean condition to check
@@ -33,7 +33,7 @@
 #'
 #' @export
 makeChecks <- function(assertionName, cond, errormsg, args = alist(x=),
-                       pos = parent.env(environment())){
+                       pos = -1){
   cond = substitute(cond)
   errormsg = substitute(errormsg)
   value = function(x){}

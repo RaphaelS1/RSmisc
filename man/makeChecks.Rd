@@ -5,7 +5,7 @@
 \title{Automatic Generation of Validaton Functions}
 \usage{
 makeChecks(assertionName, cond, errormsg, args = alist(x=),
-  pos = parent.env(environment()))
+  pos = -1)
 }
 \arguments{
 \item{assertionName}{name that follows assert/check/test/is}

@@ -4,7 +4,7 @@
 \alias{getR6Class}
 \title{Get R6 Class Name}
 \usage{
-getR6Class(object, classname = TRUE, n.par = 0)
+getR6Class(object, classname = TRUE, n.par = 0, pos = -1)
 }
 \arguments{
 \item{object}{R6 object.}
@@ -13,6 +13,8 @@ getR6Class(object, classname = TRUE, n.par = 0)
 
 \item{n.par}{numeric, which class should be returned? By default returns the class of the object, increasing
 the number returns parents of the class (if applicable).}
+
+\item{pos}{environment to search in, default is -1 (current)}
 }
 \value{
 string giving R6 class name.
