@@ -7,7 +7,8 @@
 #' @param silent logical, if TRUE (default) then error returned silently.
 #' @seealso \code{\link{stopwarn}}
 #' @details Tests for an error or nerror (no error) from given expression. If an error is found
-#' then either returns NULL with warning or breaks code. If nerror then returns the given expression.
+#' then either returns silent, NULL with warning or breaks code.
+#' If nerror then returns the given expression.
 #'
 #' @examples
 #' \dontrun{
@@ -19,7 +20,7 @@
 ifnerror <- function(expr, noerror, error = "warn", silent = T){
   x = try(expr, silent)
   if(inherits(x, "try-error")){
-    stopwarn(error, "Error not Nerror!")
+    if(!silent) stopwarn(error, "Error not Nerror!")
   } else {
     noerror
   }
